@@ -1,0 +1,23 @@
+EXE=graph.EXE
+OBJ=main.o postfixmath.o postscript.o queue.o shuntingyard.o stack.o
+OPT=-std=c99 -pedantic -Wall -Wextra
+
+
+$(EXE): $(OBJ)
+	gcc $(OBJ) -o $(EXE) $(OPT)
+
+.c.o:
+	gcc -c $^ $(OPT)
+
+rebuild:
+	del /q $(OBJ) $(EXE)
+	mingw32-make -f makefile.win
+delete:
+	del /q $(OBJ) $(EXE)
+	mingw32-make -f makefile.win
+
+
+
+
+
+
